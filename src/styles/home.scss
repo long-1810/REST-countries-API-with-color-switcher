@@ -1,0 +1,242 @@
+@import "./variables";
+
+.home-container {
+  font-size: $homepage-font-size;
+  color: $dark-blue-dark-mode;
+  background-color: $very-light-gray-light-mode;
+  min-height: 100vh;
+  transition: 0.2s;
+
+  .main {
+    padding: 2rem 4rem;
+
+    &__functionality {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    &__list-countries {
+      margin: 2rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+  }
+
+  .search {
+    background-color: $white;
+    width: 20rem;
+    padding: 1rem 1.5rem;
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.50);
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &__icon {
+      width: 1rem;
+      height: 1rem;
+      // The following line sets color to $dark-gray-light-mode
+      filter: invert(63%) sepia(0%) saturate(402%) hue-rotate(239deg) brightness(83%) contrast(92%);
+    }
+
+    &__input {
+      width: 100%;
+      border: none;
+      outline: none;
+      caret-color: $dark-blue-dark-mode;
+      font-weight: $font-normal;
+
+      &::placeholder {
+        color: $dark-gray-light-mode;
+      }
+
+      &:focus {
+        color: $dark-blue-dark-mode;
+      }
+    }
+  }
+
+  .filter {
+    position: relative;
+    width: 12rem;
+
+    &__drop-button {
+      padding: 1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      background-color: #fff;
+      border-radius: 0.25rem;
+      box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.50);
+      cursor: pointer;
+      z-index: 5;
+
+      &__text {
+        font-weight: $font-normal;
+        color: $very-dark-blue-light-mode;
+      }
+
+      &__icon {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+    &__gap {
+      width: 100%;
+      height: 0.5rem;
+    }
+
+    &__filter-options {
+      display: none;
+
+      position: absolute;
+      left: 0;
+      right: 0;
+      padding-block: 1rem;
+      background-color: $white;
+      border-radius: 0.25rem;
+      box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.50);
+      z-index: 1;
+
+      &__filter-option {
+        text-align: left;
+        font-weight: $font-normal;
+        padding: 0.25rem 1.25rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+          opacity: 0.6;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &:hover .filter__filter-options {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .card {
+    border-radius: 0.25rem;
+    background-color: $white;
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.50);
+    cursor: pointer;
+    transition: 0.2s;
+    width: 16rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    &__flag {
+      align-self: center;
+      justify-self: center;
+      width: auto;
+      height: 8rem;
+    }
+
+    &__info {
+      padding: 1.5rem;
+
+      &__country-name {
+        color: $very-dark-blue-light-mode;
+        font-weight: $font-bold;
+        margin-bottom: 1rem;
+      }
+
+      &__label {
+        color: $very-dark-blue-light-mode;
+        font-weight: $font-normal;
+      }
+
+      &__number,
+      &__name {
+        color: $very-dark-blue-light-mode;
+        font-weight: $font-light;
+      }
+    }
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+
+
+.home-container--dark {
+  color: $very-light-gray-light-mode;
+  background-color: $very-dark-blue-dark-mode;
+
+  .search {
+    background-color: $dark-blue-dark-mode;
+
+    &__icon {
+      // The following line sets color to $dark-gray-light-mode
+      filter: invert(63%) sepia(0%) saturate(402%) hue-rotate(239deg) brightness(83%) contrast(92%);
+    }
+
+    &__input {
+      background-color: $dark-blue-dark-mode;
+      caret-color: $very-light-gray-light-mode;
+      color: $very-light-gray-light-mode;
+
+      &__icon {
+        filter: invert(98%) sepia(99%) saturate(3%) hue-rotate(160deg) brightness(113%) contrast(96%);
+      }
+
+      &::placeholder {
+        color: $dark-gray-light-mode;
+      }
+
+      &:focus {
+        color: $very-light-gray-light-mode;
+      }
+    }
+  }
+
+  .filter {
+    &__drop-button {
+      background-color: $dark-blue-dark-mode;
+
+      &__text {
+        color: $very-light-gray-light-mode;
+      }
+    }
+
+    &__filter-options {
+      background-color: $dark-blue-dark-mode;
+
+      &__filter-option {
+        color: $very-light-gray-light-mode;
+      }
+    }
+  }
+
+  .card {
+    background-color: $dark-blue-dark-mode;
+
+    &__info {
+      &__country-name {
+        color: $very-light-gray-light-mode;
+      }
+
+      &__label {
+        color: $very-light-gray-light-mode;
+      }
+
+      &__number,
+      &__name {
+        color: $very-light-gray-light-mode;
+      }
+    }
+  }
+}
