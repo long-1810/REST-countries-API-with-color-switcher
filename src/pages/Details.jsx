@@ -59,7 +59,7 @@ export default function Details() {
     }
 
     if (selectedCountryLocal === "") {
-      navigate("*");
+      navigate("not-found");
     }
   }, [country]);
 
